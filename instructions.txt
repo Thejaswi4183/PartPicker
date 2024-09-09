@@ -1,0 +1,40 @@
+First, go to the XAMPP installation directory and open the XAMPP folder and follow the below steps same:
+1. Go to the (C:\xampp\php) and open the php.ini file then find the mail function by scrolling down or simply press ctrl+f to search directly then find the following lines and pass these values:
+
+PHP.INI FILE: 
+[mail function]
+For Win32 only.
+http://php.net/smtp
+SMTP=smtp.gmail.com
+http://php.net/smtp-port
+smtp_port=587
+sendmail_from = your_email_address_here
+sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"
+
+
+That's all for this file, save the file by pressing ctrl+s and close.
+
+2. Now, go the (C:\xampp\sendmail) and open the sendmail.ini  then find sendmail by scrolling down or press ctrl+f to search directly then find the following lines and pass these values:
+
+SENDMAIL.INI FILE: 
+smtp_server=smtp.gmail.com
+smtp_port=587
+error_logfile=error.log
+debug_logfile=debug.log
+auth_username=your_email_address_here
+auth_password=your_password_here
+force_sender=your_email_address_here (it's optional)
+
+
+That's all for this file, save the file by pressing ctrl+s and close.
+
+
+
+Important note:
+
+
+
+If your mail isn't sent and you got a warning or error. Please configure your google account security as "Less secure apps". To configure it:
+- Go to your Google account then click on the Security tab and scroll down, there you can see the Less secure app access panel, Simply turn on that. This panel only shows if you haven't enabled 2-Step Verification.
+
+If you're getting an error as a password is wrong then simply go to the sendmail.ini file and put the correct password of your that Gmail account which you've provided in sendmail_from.
