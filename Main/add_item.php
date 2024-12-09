@@ -25,6 +25,9 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
         <!-- CSS Files -->
         <link id="pagestyle" href=".\css\material-dashboard.css" rel="stylesheet" />
+        <!-- Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     </head>
     <!-- Alerify JS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
@@ -33,22 +36,21 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
     <style>
         .form-control {
             border: 1px solid #b3a1a1 !important;
-            padding: 8px 10px;
         }
 
-        .button {
-            background-color: #fc5603;
-            color: #fff;
-            font-weight: 430;
-            padding-right: 3%;
-            padding-left: 3%;
-            padding-bottom: 7px;
-            padding-top: 7px;
-            border-radius: 5px;
-            border-width: 0px;
-            margin-top: 6px;
-        }
-    </style>
+        .btn {
+      background-color: #fc5603;
+      color: #fff;
+      font-weight: 400;
+      padding-right: 8%;
+      padding-left: 8%;
+      padding-bottom: 8px;
+      padding-top: 8px;
+      border-radius: 5px;
+      border-width: 0px;
+      margin-top: 6px;
+    }
+  </style>
 
     <body class="g-sidenav-show  bg-gray-200">
         <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
@@ -72,7 +74,7 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="category.php">
+                        <a class="nav-link text-white" href="items.php">
                             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="material-icons opacity-10">table_view</i>
                             </div>
@@ -81,7 +83,7 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-white active" href="add_category.php">
+                        <a class="nav-link text-white" href="add_category.php">
                             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="material-icons opacity-10">add</i>
                             </div>
@@ -89,7 +91,7 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white active bg-gradient-primary " href="#">
+                        <a class="nav-link text-white active bg-gradient-primary " href="add_item.php">
                             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="material-icons opacity-10">add</i>
                             </div>
@@ -112,7 +114,7 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h2 class="font-weight-bolder mb-0">Add Item</h2>
+                                <h3 class="font-weight-bolder mb-1">Add Item</h3>
                             </div>
                             <div class="card-body">
                                 <form action="code.php" method="post" enctype="multipart/form-data">

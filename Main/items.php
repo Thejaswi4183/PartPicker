@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
 
-?>
+  ?>
   <!DOCTYPE html>
   <html lang="en">
 
@@ -15,7 +15,8 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
       Admin Panel
     </title>
     <!--     Fonts and icons     -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
     <!-- Nucleo Icons -->
     <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -26,7 +27,8 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
     <!-- CSS Files -->
     <link id="pagestyle" href=".\css\material-dashboard.css" rel="stylesheet" />
     <!-- Boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   </head>
   <style>
     .btn {
@@ -44,9 +46,12 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
   </style>
 
   <body class="g-sidenav-show  bg-gray-200">
-    <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+    <aside
+      class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
+      id="sidenav-main">
       <div class="sidenav-header">
-        <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+        <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+          aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href="admin.php">
           <span class="ms-1 font-weight-bold text-white">Admin Panel</span>
         </a>
@@ -56,12 +61,12 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
         <ul class="navbar-nav">
 
 
-        <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link text-white" href="category.php">
               <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="material-icons opacity-10">table_view</i>
               </div>
-              <span class="nav-link-text ms-1">All Category</span>
+              <span class="nav-link-text ms-1">All Categories</span>
             </a>
           </li>
 
@@ -84,7 +89,7 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
             </a>
           </li>
 
-          
+
 
           <li class="nav-item">
             <a class="nav-link text-white " href="add_item.php">
@@ -136,24 +141,32 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
 
                     if (mysqli_num_rows($category) > 0) {
                       foreach ($category as $item) {
-                    ?>
+                        ?>
                         <tr>
-                          <td><?= $item['id']; ?></td>
-                          <td><?= $item['name']; ?></td>
-                          <td><?=$item['slug'];?></td>
                           <td>
-                            <img src="./Uploads/<?= $item['image'];?>"  width=70px alt="<?= $item['name']; ?>">
+                            <?= $item['id']; ?>
                           </td>
-                          <td><?= $item['status'] == '0' ? "Visible" : "Hidden" ?></td>
                           <td>
-                          <form action="code.php" method="POST">
+                            <?= $item['name']; ?>
+                          </td>
+                          <td>
+                            <?= $item['slug']; ?>
+                          </td>
+                          <td>
+                            <img src="./Uploads/<?= $item['image']; ?>" width=70px alt="<?= $item['name']; ?>">
+                          </td>
+                          <td>
+                            <?= $item['status'] == '0' ? "Visible" : "Hidden" ?>
+                          </td>
+                          <td>
+                            <form action="code.php" method="POST">
                               <input type="hidden" value="<?= $item['id']; ?>" name="item_id">
                               <button type="submit" class="btn btn-danger" name="delete_items_btn">Delete
                             </form>
                           </td>
                         </tr>
 
-                    <?php
+                        <?php
                       }
                     } else {
                       echo "No Records Found";
@@ -168,11 +181,11 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
         </div>
       </div>
   </body>
-<?php
+  <?php
 } else {
   header("Location: login.php");
   exit();
 }
 ?>
 
-  </html>
+</html>

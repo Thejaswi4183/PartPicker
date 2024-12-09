@@ -29,6 +29,9 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
   <!-- Alerify JS -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+  <!-- Boostrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   </head>
   <style>
     .form-control {
@@ -36,18 +39,19 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
       padding: 8px 10px;
     }
 
-    .button {
+    .btn {
       background-color: #fc5603;
       color: #fff;
-      font-weight: 430;
-      padding-right: 3%;
-      padding-left: 3%;
-      padding-bottom: 7px;
-      padding-top: 7px;
+      font-weight: 400;
+      padding-right: 8%;
+      padding-left: 8%;
+      padding-bottom: 8px;
+      padding-top: 8px;
       border-radius: 5px;
       border-width: 0px;
       margin-top: 6px;
     }
+  </style>
   </style>
 
   <body class="g-sidenav-show  bg-gray-200">
@@ -113,7 +117,7 @@ if (isset($_SESSION['id']) || isset($_SESSION['user_name'])) {
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h2 class="font-weight-bolder mb-0">Add Category</h2>
+                <h3 class="font-weight-bolder mb-1">Add Category</h2>
               </div>
               <div class="card-body">
                 <form action="code.php" method="post" enctype="multipart/form-data">
